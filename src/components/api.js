@@ -4,9 +4,9 @@ import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Grid, Paper, Card, CardContent } from '@material-ui/core';
 import CountUp from 'react-countup';
 import { Typography } from '@material-ui/core';
-import red from '@material-ui/core/colors/red';
 
 import './home.css';
+
 
 
 
@@ -15,6 +15,7 @@ export default class PersonList extends React.Component {
     persons: [],
 
   }
+
 
   componentDidMount() {
     axios.get(`https://api.covid19india.org/data.json`)
@@ -99,6 +100,8 @@ export default class PersonList extends React.Component {
     </Card>
   </Paper>
   </Grid>
+
+
 
 </Grid>
 
