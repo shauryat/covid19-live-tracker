@@ -13,7 +13,8 @@ import axios from 'axios';
 
 
 import './home.css';
-import MainChart from './graphs/maingraph'
+import MainChart from './graphs/maingraph';
+import MainChartTwo from './graphs/othercharts';
 
 
 
@@ -74,6 +75,16 @@ export default class StatewiseTable extends React.Component {
       </Table>
     </TableContainer>
     </Paper>
+    <div style={{marginTop:'3rem'}}>
+    <Typography variant="h5" align="center">Daily Recovered</Typography>
+    <MainChartTwo info="dailyrecovered" linecolor="#1de9b6"/>
+    <br/>
+    </div>
+    <div style={{marginTop:'3rem'}}>
+    <Typography variant="h5" align="center">Daily Deaths</Typography>
+    <MainChartTwo info="dailydeceased" linecolor="#e57373"/>
+    <br/>
+    </div>
           </Grid>
           </Grid>
           </div>
