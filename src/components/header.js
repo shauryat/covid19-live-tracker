@@ -40,7 +40,7 @@ export default function Header(props) {
       </AppBar>
         <Hero size="small">
         <Hero.Body>
-       <Typography variant="h6" align="center" color="primary" display="block"> 
+       <Typography variant="subtitle1" align="center" color="primary" display="block"> 
        Please Stay at your Home for your as well other's safety & well being
        </Typography>
         </Hero.Body>

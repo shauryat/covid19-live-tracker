@@ -13,12 +13,12 @@ import axios from 'axios';
 
 
 import './home.css';
-
+import MainChart from './graphs/maingraph'
 
 
 
 export default class StatewiseTable extends React.Component {
-
+  
     state = {
         rows: []
       }
@@ -31,11 +31,16 @@ export default class StatewiseTable extends React.Component {
           })
       }
 
+    
+
     render() {
         return (
           
           <div style={{marginTop:'3rem'}}>
-          <Typography variant="h4" align="center">Statewise Distribuition</Typography>
+          <Typography variant="h5" align="center">Daily Timeline</Typography>
+          <MainChart info="dailyconfirmed" linecolor="#7986cb"/>
+          <br/>
+          <Typography variant="h5" align="center">Statewise Distribuition</Typography>
            <Grid container spacing={3}>
            <Grid item xs={12}>
            <Paper elevation={0}>
@@ -54,7 +59,9 @@ export default class StatewiseTable extends React.Component {
           {this.state.rows.map((row) => (
             <TableRow key={row.state}>
               <TableCell align="center">
-                {row.state}<br/><ArrowUpwardIcon color="error" style={{ fontSize: 15 }}/>
+                {row.state} 
+                <br/>
+                <ArrowUpwardIcon color="error" style={{ fontSize: 15 }}/>
                 <Typography variant="caption" color="error">{row.deltaconfirmed}</Typography>
               </TableCell>
               <TableCell align="center">{row.confirmed}</TableCell>

@@ -4,6 +4,8 @@ import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Grid, Paper, Card, CardContent } from '@material-ui/core';
 import CountUp from 'react-countup';
 import { Typography } from '@material-ui/core';
+import Graph from './graphs/minigraph';
+
 
 import './home.css';
 
@@ -35,15 +37,16 @@ export default class PersonList extends React.Component {
   <Paper elevation={0}>
     <Card variant="outlined">
      <CardContent align="center">
-        <Typography variant="h4" color="secondary">
+        <Typography variant="h6" color="secondary">
        Total
         </Typography>
         <Typography color="textPrimary" variant="subtitle1"> +[
           { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.deltaconfirmed}/>)}
            ] </Typography>
-        <Typography variant="h4" color="Secondary">
+        <Typography variant="h6" color="Secondary">
         { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.confirmed}/>)}
         </Typography>
+        <Graph dataset="dailyconfirmed" color="#7986cb"/>
      </CardContent>
     </Card>
   </Paper>
@@ -53,13 +56,14 @@ export default class PersonList extends React.Component {
   <Paper elevation={0}>
     <Card variant="outlined">
      <CardContent align="center">
-        <Typography variant="h4" color="Primary">
+        <Typography variant="h6" color="Primary">
       Active
         </Typography>
         <Typography color="textPrimary" variant="subtitle1"> - </Typography>
-        <Typography variant="h4" color="Primary">
+        <Typography variant="h6" color="Primary">
         { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.active}/>)}
         </Typography>
+        <Graph dataset="dailyconfirmed" color="#64b5f6"/>
      </CardContent>
     </Card>
   </Paper>
@@ -69,15 +73,16 @@ export default class PersonList extends React.Component {
   <Paper elevation={0}>
     <Card variant="outlined">
      <CardContent align="center">
-        <Typography variant="h4" color="textSecondary">
+        <Typography variant="h6" color="textSecondary">
       Recovered
         </Typography>
         <Typography color="textPrimary" variant="subtitle1"> +[
           { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.deltarecovered}/>)}
            ] </Typography>
-        <Typography variant="h4" color="textSecondary">
+        <Typography variant="h6" color="textSecondary">
         { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.recovered}/>)}
         </Typography>
+        <Graph dataset="dailyrecovered" color="#1de9b6"/>
      </CardContent>
     </Card>
   </Paper>
@@ -87,20 +92,20 @@ export default class PersonList extends React.Component {
   <Paper elevation={0}>
     <Card variant="outlined">
      <CardContent align="center">
-        <Typography variant="h4" color="error">
+        <Typography variant="h6" color="error">
        Deaths
         </Typography>
         <Typography color="textPrimary" variant="subtitle1"> +[
           { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.deltadeaths}/>)}
            ] </Typography>
-        <Typography variant="h4" color="error">
+        <Typography variant="h6" color="error">
         { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.deaths}/>)}
         </Typography>
+        <Graph dataset="dailydeceased" color="#e57373"/>
      </CardContent>
     </Card>
   </Paper>
   </Grid>
-
 
 
 </Grid>
