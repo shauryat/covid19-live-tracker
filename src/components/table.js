@@ -39,7 +39,7 @@ export default class StatewiseTable extends React.Component {
           
           <div style={{marginTop:'3rem'}}>
           <Typography variant="h5" align="center">Daily Timeline</Typography>
-          <MainChart info="dailyconfirmed" linecolor="#7986cb"/>
+          <MainChart info="dailyconfirmed" linecolor="#3949ab"/>
           <br/>
           <Typography variant="h5" align="center">Statewise Distribuition</Typography>
            <Grid container spacing={3}>

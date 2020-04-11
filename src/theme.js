@@ -6,10 +6,10 @@ export default createMuiTheme({
 
  palette : {
     primary : {
-        main : '#64b5f6'
+        main : '#2196f3'
     },
     secondary : {
-        main: '#7986cb'
+        main: '#3949ab'
     },
  },
  overrides: {
@@ -25,7 +25,7 @@ export default createMuiTheme({
             color:'#1de9b6'
         },
         colorError: {
-            color:'#e57373'
+            color:'#ff1744'
         },
 
     },

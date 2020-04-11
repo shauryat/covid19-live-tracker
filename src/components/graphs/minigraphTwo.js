@@ -3,7 +3,7 @@ import { LineChart, Line , YAxis} from 'recharts';
 
 import axios from 'axios';
 
-export default class Graph extends React.Component {
+export default class GraphTwo extends React.Component {
     state = {
       graphstats: [],
   
@@ -22,7 +22,7 @@ export default class Graph extends React.Component {
         return ( 
 
             <LineChart width={99} height={33} data={this.state.graphstats.slice(45,65)}>
-            <YAxis domain={[0, 900]} hide={true}/>
+            <YAxis domain={[0, 100]} hide={true}/>
             <Line type="monotone" dataKey={this.props.dataset} stroke={this.props.color} strokeWidth={2} dot={false}/>
           </LineChart>
 

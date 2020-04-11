@@ -5,6 +5,7 @@ import { Grid, Paper, Card, CardContent } from '@material-ui/core';
 import CountUp from 'react-countup';
 import { Typography } from '@material-ui/core';
 import Graph from './graphs/minigraph';
+import GraphTwo from './graphs/minigraphTwo';
 
 
 import './home.css';
@@ -82,7 +83,7 @@ export default class PersonList extends React.Component {
         <Typography variant="h6" color="textSecondary">
         { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.recovered}/>)}
         </Typography>
-        <Graph dataset="dailyrecovered" color="#1de9b6"/>
+        <GraphTwo dataset="dailyrecovered" color="#1de9b6"/>
      </CardContent>
     </Card>
   </Paper>
@@ -101,7 +102,7 @@ export default class PersonList extends React.Component {
         <Typography variant="h6" color="error">
         { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.deaths}/>)}
         </Typography>
-        <Graph dataset="dailydeceased" color="#e57373"/>
+        <GraphTwo dataset="dailydeceased" color="#e57373"/>
      </CardContent>
     </Card>
   </Paper>
