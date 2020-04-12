@@ -32,11 +32,10 @@ export default class PersonList extends React.Component {
     return (
     
   
-  <Grid container spacing={3}>
+  <Grid container spacing={0}>
 
-  <Grid item xs={6}>
-  <Paper elevation={0}>
-    <Card variant="outlined">
+  <Grid item xs={3}>
+
      <CardContent align="center">
         <Typography variant="h6" color="secondary">
        Total
@@ -49,13 +48,11 @@ export default class PersonList extends React.Component {
         </Typography>
         <Graph dataset="dailyconfirmed" color="#7986cb"/>
      </CardContent>
-    </Card>
-  </Paper>
+  
   </Grid>
 
-  <Grid item xs={6}>
-  <Paper elevation={0}>
-    <Card variant="outlined">
+  <Grid item xs={3}>
+  
      <CardContent align="center">
         <Typography variant="h6" color="Primary">
       Active
@@ -66,16 +63,13 @@ export default class PersonList extends React.Component {
         </Typography>
         <Graph dataset="dailyconfirmed" color="#64b5f6"/>
      </CardContent>
-    </Card>
-  </Paper>
   </Grid>
 
-  <Grid item xs={6}>
-  <Paper elevation={0}>
-    <Card variant="outlined">
+  <Grid item xs={3}>
+  
      <CardContent align="center">
         <Typography variant="h6" color="textSecondary">
-      Recovered
+      Recover
         </Typography>
         <Typography color="textPrimary" variant="subtitle1"> +[
           { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.deltarecovered}/>)}
@@ -85,13 +79,9 @@ export default class PersonList extends React.Component {
         </Typography>
         <GraphTwo dataset="dailyrecovered" color="#1de9b6"/>
      </CardContent>
-    </Card>
-  </Paper>
   </Grid>
 
-  <Grid item xs={6}>
-  <Paper elevation={0}>
-    <Card variant="outlined">
+  <Grid item xs={3}>
      <CardContent align="center">
         <Typography variant="h6" color="error">
        Deaths
@@ -104,8 +94,6 @@ export default class PersonList extends React.Component {
         </Typography>
         <GraphTwo dataset="dailydeceased" color="#e57373"/>
      </CardContent>
-    </Card>
-  </Paper>
   </Grid>
 
 

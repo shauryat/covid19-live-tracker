@@ -23,7 +23,7 @@ import {
 
     render() {
         return (
-            <div style={{ width: '95%', height: 300 }}>
+            <div style={{ width: '95%', height: 200 }}>
             <ResponsiveContainer>
             <BarChart
             data={this.state.graphstati.slice(37)}

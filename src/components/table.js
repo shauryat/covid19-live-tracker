@@ -37,7 +37,7 @@ export default class StatewiseTable extends React.Component {
     render() {
         return (
           
-          <div style={{marginTop:'3rem'}}>
+          <div style={{marginTop:'1rem'}}>
           <Typography variant="h5" align="center">Daily Timeline</Typography>
           <MainChart info="dailyconfirmed" linecolor="#3949ab"/>
           <br/>
@@ -49,7 +49,8 @@ export default class StatewiseTable extends React.Component {
             <Table size="medium">
               <TableHead>
                 <TableRow>
-                  <TableCell>State <ArrowUpwardIcon color="error" style={{ fontSize: 15 }}/> cases</TableCell>
+                  <TableCell>State 
+                  <ArrowUpwardIcon color="error" style={{ fontSize: 15 }}/> cases</TableCell>
                   <TableCell align="center">Confrd</TableCell>
                   <TableCell align="center">Actv</TableCell>
                   <TableCell align="center">Recvrd</TableCell>
@@ -75,12 +76,12 @@ export default class StatewiseTable extends React.Component {
       </Table>
     </TableContainer>
     </Paper>
-    <div style={{marginTop:'3rem'}}>
+    <div style={{marginTop:'1rem'}}>
     <Typography variant="h5" align="center">Daily Recovered</Typography>
     <MainChartTwo info="dailyrecovered" linecolor="#1de9b6"/>
     <br/>
     </div>
-    <div style={{marginTop:'3rem'}}>
+    <div style={{marginTop:'1rem'}}>
     <Typography variant="h5" align="center">Daily Deaths</Typography>
     <MainChartTwo info="dailydeceased" linecolor="#e57373"/>
     <br/>
