@@ -15,6 +15,7 @@ import axios from 'axios';
 import './home.css';
 import MainChart from './graphs/maingraph';
 import MainChartTwo from './graphs/othercharts';
+import MainChartThree from './graphs/deathChart';
 
 
 
@@ -38,10 +39,10 @@ export default class StatewiseTable extends React.Component {
         return (
           
           <div style={{marginTop:'1rem'}}>
-          <Typography variant="h5" align="center">Daily Timeline</Typography>
-          <MainChart info="dailyconfirmed" linecolor="#3949ab"/>
+          <Typography variant="h6" align="center">Daily Timeline</Typography>
+          <MainChart info="dailyconfirmed"/>
           <br/>
-          <Typography variant="h5" align="center">Statewise Distribuition</Typography>
+          <Typography variant="h6" align="center">Statewise Distribuition</Typography>
            <Grid container spacing={3}>
            <Grid item xs={12}>
            <Paper elevation={0}>
@@ -77,13 +78,13 @@ export default class StatewiseTable extends React.Component {
     </TableContainer>
     </Paper>
     <div style={{marginTop:'1rem'}}>
-    <Typography variant="h5" align="center">Daily Recovered</Typography>
+    <Typography variant="h6" align="center">Daily Recovered</Typography>
     <MainChartTwo info="dailyrecovered" linecolor="#1de9b6"/>
     <br/>
     </div>
     <div style={{marginTop:'1rem'}}>
-    <Typography variant="h5" align="center">Daily Deaths</Typography>
-    <MainChartTwo info="dailydeceased" linecolor="#e57373"/>
+    <Typography variant="h6" align="center">Daily Deaths</Typography>
+    <MainChartThree info="dailydeceased" linecolor="#e57373"/>
     <br/>
     </div>
           </Grid>

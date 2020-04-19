@@ -5,7 +5,7 @@ import {
     AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
   } from 'recharts';
 
-  export default class MainChartTwo extends React.Component {
+  export default class MainChartThree extends React.Component {
 
     state = {
         graphstati: [],
@@ -32,7 +32,7 @@ import {
             }}
           >
           <defs>
-          <linearGradient id="colorUvn" x1="0" y1="0" x2="0" y2="1">
+          <linearGradient id="colorUvng" x1="0" y1="0" x2="0" y2="1">
             <stop offset="5%" stopColor={this.props.linecolor}  stopOpacity={0.8}/>
             <stop offset="95%" stopColor={this.props.linecolor} stopOpacity={0}/>
           </linearGradient>
@@ -40,9 +40,9 @@ import {
 
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date"  stroke={this.props.linecolor}/>
-            <YAxis type="number" domain={[0, dataMax => (dataMax * 7)]}  stroke={this.props.linecolor}/>
+            <YAxis type="number" domain={[0, dataMax => (dataMax * 10)]}  stroke={this.props.linecolor}/>
             <Tooltip />
-            <Area dataKey={this.props.info} stroke={this.props.linecolor} fillOpacity={1} fill="url(#colorUvn)"/>
+            <Area dataKey={this.props.info} stroke={this.props.linecolor} fillOpacity={1} fill="url(#colorUvng)"/>
           </AreaChart>
           </ResponsiveContainer>
           </div>

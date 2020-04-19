@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
-import { Grid, Paper, Card, CardContent } from '@material-ui/core';
+import { Grid, CardContent } from '@material-ui/core';
 import CountUp from 'react-countup';
 import { Typography } from '@material-ui/core';
 import Graph from './graphs/minigraph';
@@ -31,7 +31,7 @@ export default class PersonList extends React.Component {
   render() {
     return (
     
-  
+  <div className="black">
   <Grid container spacing={0}>
 
   <Grid item xs={3}>
@@ -95,10 +95,8 @@ export default class PersonList extends React.Component {
         <GraphTwo dataset="dailydeceased" color="#e57373"/>
      </CardContent>
   </Grid>
-
-
 </Grid>
-
+</div>
   
  
     )
