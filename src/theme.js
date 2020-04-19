@@ -13,6 +13,12 @@ export default createMuiTheme({
     secondary : {
         main: '#3949ab'
     },
+
+    background : {
+        paper : '#303030'
+
+        
+    }
  },
  overrides: {
 
