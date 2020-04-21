@@ -15,7 +15,7 @@ export default createMuiTheme({
     },
 
     background : {
-        paper : '#303030'
+        paper : '#1F1B24'
 
         
     }

@@ -14,6 +14,7 @@ import axios from 'axios';
 
 import './home.css';
 import MainChart from './graphs/maingraph';
+import Daily from './graphs/bargraph';
 
 
 
@@ -38,10 +39,17 @@ export default class StatewiseTable extends React.Component {
         return (
           
           <div>
-          <Typography variant="h6" align="center">Daily Timeline</Typography>
-          <MainChart info="dailyconfirmed" linecolor="#3949ab" number="18"/>
+          <Typography variant="h6" align="center">Daily New Cases</Typography>
+          <br/>
+          <Typography variant="subtitle2" align="center">Line (Daily New Cases)</Typography>
+          <MainChart info="dailyconfirmed" linecolor="#673ab7" number="18"/>
+          <br/>
+          <Typography variant="subtitle2" align="center">Bar Chart (Daily New Cases)</Typography>
+          <Daily infoo="dailyconfirmed" linecolorr="#673ab7" numberr="2"/>
+          <br/>
           <br/>
           <Typography variant="h6" align="center">Statewise Distribuition</Typography>
+          <br/>
            <Grid container spacing={0}>
            <Grid item xs={12}>
            <Paper elevation={0}>
