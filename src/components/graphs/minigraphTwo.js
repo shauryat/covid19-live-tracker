@@ -21,8 +21,8 @@ export default class GraphTwo extends React.Component {
     render() {
         return ( 
 
-            <LineChart width={80} height={33} data={this.state.graphstats.slice(45,65)}>
-            <YAxis domain={[0, 100]} hide={true}/>
+            <LineChart width={80} height={33} data={this.state.graphstats.slice(60,-1)}>
+            <YAxis domain={[0, 500]} hide={true}/>
             <Line type="monotone" dataKey={this.props.dataset} stroke={this.props.color} strokeWidth={2} dot={false}/>
           </LineChart>
 

@@ -14,8 +14,7 @@ import axios from 'axios';
 
 import './home.css';
 import MainChart from './graphs/maingraph';
-import MainChartTwo from './graphs/othercharts';
-import MainChartThree from './graphs/deathChart';
+
 
 
 
@@ -38,12 +37,12 @@ export default class StatewiseTable extends React.Component {
     render() {
         return (
           
-          <div style={{marginTop:'1rem'}}>
+          <div>
           <Typography variant="h6" align="center">Daily Timeline</Typography>
-          <MainChart info="dailyconfirmed"/>
+          <MainChart info="dailyconfirmed" linecolor="#3949ab" number="18"/>
           <br/>
           <Typography variant="h6" align="center">Statewise Distribuition</Typography>
-           <Grid container spacing={3}>
+           <Grid container spacing={0}>
            <Grid item xs={12}>
            <Paper elevation={0}>
           <TableContainer>
@@ -51,7 +50,7 @@ export default class StatewiseTable extends React.Component {
               <TableHead>
                 <TableRow>
                   <TableCell>State 
-                  <ArrowUpwardIcon color="error" style={{ fontSize: 15 }}/> cases</TableCell>
+                  <ArrowUpwardIcon color="error" style={{ fontSize: 12 }}/> cases</TableCell>
                   <TableCell align="center">Confrd</TableCell>
                   <TableCell align="center">Actv</TableCell>
                   <TableCell align="center">Recvrd</TableCell>
@@ -79,12 +78,12 @@ export default class StatewiseTable extends React.Component {
     </Paper>
     <div style={{marginTop:'1rem'}}>
     <Typography variant="h6" align="center">Daily Recovered</Typography>
-    <MainChartTwo info="dailyrecovered" linecolor="#1de9b6"/>
+    <MainChart info="dailyrecovered" linecolor="#1de9b6" number="6"/>
     <br/>
     </div>
     <div style={{marginTop:'1rem'}}>
     <Typography variant="h6" align="center">Daily Deaths</Typography>
-    <MainChartThree info="dailydeceased" linecolor="#e57373"/>
+    <MainChart info="dailydeceased" linecolor="#e57373" number="10"/>
     <br/>
     </div>
           </Grid>
