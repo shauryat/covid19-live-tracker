@@ -25,20 +25,24 @@ export default class StatewiseTable extends React.Component {
         rows: []
       }
     
-      componentDidMount() {
-        axios.get(`https://api.covid19india.org/data.json`)
-          .then(res => {
-            const rows = res.data.statewise;
-            this.setState({ rows });
-          })
-      }
+    componentDidMount() {
+      this.getGoods();
+    }
 
+    getGoods = async () => {
+      let res = await axios.get("https://api.covid19india.org/data.json");
+      const rows = res.data.statewise;
+      this.setState({ rows: rows})
+    }
     
 
     render() {
         return (
+
+          
           
           <div>
+          {this.state.rows.length === 0 ? ( <div> Loading... </div>)  : ( <div>
           <Typography variant="h6" align="center">Daily New Cases</Typography>
           <br/>
           <Typography variant="subtitle2" align="center">Line (Daily New Cases)</Typography>
@@ -70,10 +74,10 @@ export default class StatewiseTable extends React.Component {
             <TableRow key={row.state}>
               <TableCell align="center">
                 {row.state} 
-                <br/>
+                  <br/>
                 <ArrowUpwardIcon color="error" style={{ fontSize: 15 }}/>
                 <Typography variant="caption" color="error">{row.deltaconfirmed}</Typography>
-              </TableCell>
+              </TableCell> 
               <TableCell align="center">{row.confirmed}</TableCell>
               <TableCell align="center">{row.active}</TableCell>
               <TableCell align="center">{row.recovered}</TableCell>
@@ -86,7 +90,7 @@ export default class StatewiseTable extends React.Component {
     </Paper>
     <div style={{marginTop:'1rem'}}>
     <Typography variant="h6" align="center">Daily Recovered</Typography>
-    <MainChart info="dailyrecovered" linecolor="#1de9b6" number="6"/>
+    <MainChart info="dailyrecovered" linecolor="#1de9b6" number="8"/>
     <br/>
     </div>
     <div style={{marginTop:'1rem'}}>
@@ -94,11 +98,13 @@ export default class StatewiseTable extends React.Component {
     <MainChart info="dailydeceased" linecolor="#e57373" number="10"/>
     <br/>
     </div>
+   
           </Grid>
           </Grid>
-          </div>
-
-            
+         </div> )}
+         </div> 
+         
+   
         )
     }
 }

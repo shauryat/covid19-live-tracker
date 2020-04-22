@@ -30,7 +30,7 @@ import {
             <br/>
             <ResponsiveContainer>
             <BarChart
-            data={this.state.graphstatil.slice(70,-1)}
+            data={this.state.graphstatil.slice(70)}
             margin={{
               top: 0, right: 0, left: -5, bottom: 0,
             }} >

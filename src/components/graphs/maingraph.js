@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import Paper from '@material-ui/core/Paper';
+
 
 import {
-  LineChart, Line, XAxis, YAxis, Legend, Tooltip, ResponsiveContainer
+  LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer
   } from 'recharts';
 
   export default class MainChart extends React.Component {
@@ -12,28 +12,36 @@ import {
         graphstati: [],
     
       }
+     
+  
     
       componentDidMount() {
-        axios.get(`https://api.covid19india.org/data.json`)
-          .then(res => {
-            const graphstati = res.data.cases_time_series;
-            this.setState({ graphstati : graphstati });
-          })
+       this.getData();
       }
-  
+
+      getData = async () =>{
+      let res = await  axios.get("https://api.covid19india.org/data.json");
+      const graphstati = res.data.cases_time_series;
+            this.setState({ graphstati : graphstati })
+
+      };
+          
+      
 
     render() {
         return (
+          <div>
+          {this.state.graphstati.length === 0 ? (
+            <div>Loading...</div>
+        ) : (
+
           <div style={{ width: '95%', height: 200 }}>
           <ResponsiveContainer>
           <LineChart
-          data={this.state.graphstati.slice(50,-1)}
+          data={this.state.graphstati.slice(50)}
           margin={{
             top: 0, right: 0, left: -5, bottom: 0,
-          }}
-         
-          
-        >
+          }}>
        
          
           <XAxis dataKey="date" strokeWidth={3}/>
@@ -41,10 +49,12 @@ import {
           
           <Tooltip />
           <Line type="monotone" dataKey={this.props.info} stroke={this.props.linecolor} strokeWidth={4} 
-          activeDot={{ r: 6 }}  isAnimationActive={true} animationBegin={10} />
+          activeDot={{ r: 6 }}  isAnimationActive={true} animationBegin={30}  animationDuration={2000}/>
         </LineChart>
         </ResponsiveContainer>
         </div>
+        )} 
+        </div>
             );
         }
-      }
+      } 

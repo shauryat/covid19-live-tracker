@@ -18,19 +18,23 @@ export default class PersonList extends React.Component {
     persons: [],
 
   }
+ 
 
 
   componentDidMount() {
-    axios.get(`https://api.covid19india.org/data.json`)
-      .then(res => {
-        const persons = res.data.statewise;
-        this.setState({ persons : persons });
-      })
+   this.getData();
   }
 
+  getData = async () =>{
+  let res = await  axios.get("https://api.covid19india.org/data.json");
+  const persons = res.data.statewise;
+        this.setState({ persons : persons })
+
+  };
   render() {
     return (
-    
+    <div>
+    {this.state.persons.length === 0 ? ( <div> Loading... </div>)  : ( 
   <div className="black">
   <Grid container spacing={0}>
 
@@ -97,7 +101,8 @@ export default class PersonList extends React.Component {
   </Grid>
 </Grid>
 </div>
-  
+)} </div>
+    
  
     )
   }
