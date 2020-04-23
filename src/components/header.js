@@ -5,8 +5,7 @@ import { Typography } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+
 
 const useStyles = makeStyles(theme => ({
 
@@ -33,9 +32,7 @@ export default function Header(props) {
         <AppBar color="transparent" position="relative">
         <Toolbar> 
            <Typography variant="h6">India Covid-19 Live Tracker</Typography>
-              <Tabs className={classes.tabsContainer}>
-    
-             </Tabs>
+             
         </Toolbar>
       </AppBar>
         <Hero size="small">
@@ -50,4 +47,3 @@ export default function Header(props) {
     );
 };
 
-//  <Tab label="Statewise"/>

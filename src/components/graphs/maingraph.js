@@ -35,12 +35,12 @@ import {
             <div>Loading...</div>
         ) : (
 
-          <div style={{ width: '95%', height: 200 }}>
+          <div style={{ width: '100%', height: 200 }}>
           <ResponsiveContainer>
           <LineChart
           data={this.state.graphstati.slice(50)}
           margin={{
-            top: 0, right: 0, left: -5, bottom: 0,
+            top: 0, right: 0, left: 0, bottom: 0,
           }}>
        
          
@@ -49,7 +49,7 @@ import {
           
           <Tooltip />
           <Line type="monotone" dataKey={this.props.info} stroke={this.props.linecolor} strokeWidth={4} 
-          activeDot={{ r: 6 }}  isAnimationActive={true} animationBegin={30}  animationDuration={2000}/>
+          activeDot={{ r: 6 }} dot={{ strokeWidth: 2 }} isAnimationActive={true} animationBegin={30}  animationDuration={2000}/>
         </LineChart>
         </ResponsiveContainer>
         </div>
