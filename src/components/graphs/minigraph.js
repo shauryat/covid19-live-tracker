@@ -25,8 +25,8 @@ export default class Graph extends React.Component {
     render() {
         return ( <div>
           {this.state.graphstats.length === 0 ? (<div> Loading... </div>) : (
-            <LineChart width={80} height={33} data={this.state.graphstats.slice(60,-1)}>
-            <YAxis domain={[0, 1900]} hide={true}/>
+            <LineChart width={80} height={33} data={this.state.graphstats.slice(60)}>
+            <YAxis domain={[0, 2100]} hide={true}/>
             <Line type="monotone" dataKey={this.props.dataset} stroke={this.props.color} strokeWidth={2} isAnimationActive={true} dot={false}/>
           </LineChart>
         )}  </div>

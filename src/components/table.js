@@ -10,10 +10,10 @@ import { Grid } from '@material-ui/core';
 import { Typography } from '@material-ui/core'; 
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import axios from 'axios';
+import { teal } from '@material-ui/core/colors';
 
 
 import './home.css';
-import MainChart from './graphs/maingraph';
 import Daily from './graphs/bargraph';
 
 
@@ -44,12 +44,8 @@ export default class StatewiseTable extends React.Component {
           <div>
           {this.state.rows.length === 0 ? ( <div> Loading... </div>)  : ( <div>
           <Typography variant="h6" align="center">Daily New Cases</Typography>
-          <br/>
-          <Typography variant="subtitle2" align="center">Line (Daily New Cases)</Typography>
-          <MainChart info="dailyconfirmed" linecolor="#673ab7" number="18"/>
-          <br/>
           <Typography variant="subtitle2" align="center">Bar Chart (Daily New Cases)</Typography>
-          <Daily infoo="dailyconfirmed" linecolorr="#673ab7" numberr="2"/>
+          <Daily infoo="dailyconfirmed" linecolorr="#673ab7" numberr="2.5"/>
           <br/>
           <br/>
           <Typography variant="h6" align="center">Statewise Distribuition</Typography>
@@ -61,12 +57,11 @@ export default class StatewiseTable extends React.Component {
             <Table size="medium">
               <TableHead>
                 <TableRow>
-                  <TableCell>State 
-                  <ArrowUpwardIcon color="error" style={{ fontSize: 12 }}/> cases</TableCell>
-                  <TableCell align="center">Confrd</TableCell>
-                  <TableCell align="center">Actv</TableCell>
-                  <TableCell align="center">Recvrd</TableCell>
-                  <TableCell align="center">Died</TableCell>
+                  <TableCell>State </TableCell>
+                  <TableCell align="center"><Typography variant="subtitle2" color="error">Confrd</Typography></TableCell>
+                  <TableCell align="center"><Typography variant="subtitle2" color="Primary">Actv</Typography></TableCell>
+                  <TableCell align="center"><Typography variant="subtitle2" color="textSecondary">Recvrd</Typography></TableCell>
+                  <TableCell align="center"><Typography variant="subtitle2" color="textPrimary">Died</Typography></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -74,13 +69,17 @@ export default class StatewiseTable extends React.Component {
             <TableRow key={row.state}>
               <TableCell align="center">
                 {row.state} 
-                  <br/>
+               </TableCell> 
+              <TableCell align="center">{row.confirmed}
+              <br/> {row.deltaconfirmed === '0' ? (null) : ( <div>
                 <ArrowUpwardIcon color="error" style={{ fontSize: 15 }}/>
                 <Typography variant="caption" color="error">{row.deltaconfirmed}</Typography>
-              </TableCell> 
-              <TableCell align="center">{row.confirmed}</TableCell>
+                </div>    )}</TableCell>
               <TableCell align="center">{row.active}</TableCell>
-              <TableCell align="center">{row.recovered}</TableCell>
+              <TableCell align="center">{row.recovered}  <br/> {row.deltarecovered === '0' ? (null) : ( <div>
+                <ArrowUpwardIcon color="error" style={{ fontSize: 15, color: teal[600] }}/>
+                <Typography variant="caption" color="textSecondary">{row.deltarecovered}</Typography>
+                </div>    )}</TableCell>
               <TableCell align="center">{row.deaths}</TableCell>
             </TableRow>
           ))}
@@ -90,12 +89,14 @@ export default class StatewiseTable extends React.Component {
     </Paper>
     <div style={{marginTop:'1rem'}}>
     <Typography variant="h6" align="center">Daily Recovered</Typography>
-    <MainChart info="dailyrecovered" linecolor="#1de9b6" number="8"/>
+    <Typography variant="subtitle2" align="center">Bar Chart (Daily New Recoveries)</Typography>
+    <Daily infoo="dailyrecovered" linecolorr="#1de9b6" numberr="1"/>
     <br/>
     </div>
     <div style={{marginTop:'1rem'}}>
     <Typography variant="h6" align="center">Daily Deaths</Typography>
-    <MainChart info="dailydeceased" linecolor="#e57373" number="10"/>
+    <Typography variant="subtitle2" align="center">Bar Chart (Daily New Deaths)</Typography>
+    <Daily infoo="dailydeceased" linecolorr="#e57373" numberr="1"/>
     <br/>
     </div>
    

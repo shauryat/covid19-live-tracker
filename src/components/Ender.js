@@ -15,7 +15,7 @@ const Ender = () => {
             <Container>
               <Content style={{ textAlign: 'center' }}>
                 <p>
-                  <strong>India Covid-19 Tracker</strong> by <a href="https://github.com/shauryat">Shaurya Tuli</a>. The source API is provided
+                  <strong>India Covid-19 Tracker</strong> by <a href="https://github.com/shauryat">Shaurya Tuli</a>. The source API is provided by
                   <a href="https://api.covid19india.org/data.json"> covid19india</a>. 
                 </p>
               </Content>

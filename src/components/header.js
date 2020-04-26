@@ -4,28 +4,9 @@ import { Hero } from 'react-bulma-components';
 import { Typography } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import { makeStyles } from '@material-ui/core/styles';
-
-
-const useStyles = makeStyles(theme => ({
-
-    toolbarMargin : {
-      ...theme.mixins.toolbar,
-      marginBottom: "3rem",
-    },
-  
-    logo : {
-      height: "7rem"
-    },
-  
-    tabsContainer : {
-      marginLeft: "auto",
-    }
-  }))
-  
 
 export default function Header(props) {
-    const classes = useStyles()   
+   
   
           return (
         <div>

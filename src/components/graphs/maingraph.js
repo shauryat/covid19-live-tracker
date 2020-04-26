@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import {Grid } from '@material-ui/core';
 
 import {
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer
@@ -34,7 +34,8 @@ import {
           {this.state.graphstati.length === 0 ? (
             <div>Loading...</div>
         ) : (
-
+          <Grid>
+          <Grid item xs={12}>
           <div style={{ width: '100%', height: 200 }}>
           <ResponsiveContainer>
           <LineChart
@@ -53,6 +54,8 @@ import {
         </LineChart>
         </ResponsiveContainer>
         </div>
+        </Grid>
+        </Grid>
         )} 
         </div>
             );

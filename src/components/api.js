@@ -61,7 +61,10 @@ export default class PersonList extends React.Component {
         <Typography variant="h6" color="Primary">
       Active
         </Typography>
-        <Typography color="textPrimary" variant="subtitle1"> - </Typography>
+        <Typography color="textPrimary" variant="subtitle1"> 
+        +[
+        { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.deltaconfirmed - person.deltarecovered - person.deltadeaths}  />)}
+         ] </Typography>
         <Typography variant="h6" color="Primary">
         { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.active}/>)}
         </Typography>
@@ -81,7 +84,7 @@ export default class PersonList extends React.Component {
         <Typography variant="h6" color="textSecondary">
         { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.recovered}/>)}
         </Typography>
-        <GraphTwo dataset="dailyrecovered" color="#1de9b6"/>
+        <GraphTwo dataset="dailyrecovered" color="#1de9b6" numberr="10"/>
      </CardContent>
   </Grid>
 
@@ -96,7 +99,7 @@ export default class PersonList extends React.Component {
         <Typography variant="h6" color="error">
         { this.state.persons.filter((person, idx) => idx < 1).map(person => <CountUp end={person.deaths}/>)}
         </Typography>
-        <GraphTwo dataset="dailydeceased" color="#e57373"/>
+        <GraphTwo dataset="dailydeceased" color="#e57373" numberr="10"/>
      </CardContent>
   </Grid>
 </Grid>

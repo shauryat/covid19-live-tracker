@@ -23,8 +23,8 @@ export default class GraphTwo extends React.Component {
         return ( 
             <div>
             {this.state.graphstats.length === 0 ? ( <div>Loading...</div>) : (
-            <LineChart width={80} height={33} data={this.state.graphstats.slice(60,-1)}>
-            <YAxis domain={[0, 500]} hide={true}/>
+            <LineChart width={80} height={33} data={this.state.graphstats.slice(60)}>
+            <YAxis domain={[0, dataMax => (dataMax * this.props.numberr)]} hide={true}/>
             <Line type="monotone" dataKey={this.props.dataset} stroke={this.props.color} strokeWidth={2} dot={false}/>
           </LineChart>
          )} </div>
